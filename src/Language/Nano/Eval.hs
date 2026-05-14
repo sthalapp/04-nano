@@ -172,7 +172,10 @@ eval = error "TBD:eval"
 --------------------------------------------------------------------------------
 evalOp :: Binop -> Value -> Value -> Value
 --------------------------------------------------------------------------------
-evalOp = error "TBD:evalOp"
+evalOp Plus (VInt x) (VInt y) = VInt (x+y)
+evalOp Minus (VInt x) (VInt y) = VInt (x-y)
+evalOp Mul (VInt x) (VInt y) = VInt (x*y)
+
 
 --------------------------------------------------------------------------------
 -- | `lookupId x env` returns the most recent
